@@ -1,0 +1,10 @@
+pnpm create vite my-react-app --template react
+
+my-react-app: project name
+--template react: create reat project with vite
+vite: Vite is a fast and lightweight build tool that provides a near-instantaneous development server and bundles your code for production using Rollup
+
+to start app:
+1- cd my-react-app
+2- pnpm install or pnpm i
+3- pnpm dev

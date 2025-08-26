@@ -1,0 +1,13 @@
+
+#title {
+    color: blue;
+}
+
+h3#title {
+    border: 2px solid #ddd;
+}
+
+img {
+    width: 250px;
+    height: 250px;
+}

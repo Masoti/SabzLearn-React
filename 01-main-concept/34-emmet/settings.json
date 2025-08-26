@@ -1,0 +1,62 @@
+{
+    "workbench.startupEditor": "none",
+    "http.proxyAuthorization": null,
+    "files.autoSave": "afterDelay",
+    "workbench.editorAssociations": {
+        "*.vsix": "default"
+    },
+    "tabnine.experimentalAutoImports": true,
+    "workbench.colorTheme": "Solarized Dark",
+    "git.autofetch": true,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "liveServer.settings.donotVerifyTags": true,
+
+    "editor.quickSuggestions": {
+    "other": true, 
+    "comments": false,
+    "strings": true
+    },
+    "editor.suggestOnTriggerCharacters": true,
+    "editor.tabCompletion": "on",
+    "javascript.suggest.autoImports": true,
+    "typescript.suggest.autoImports": true,
+    "debug.javascript.pickAndAttachOptions": {
+        
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "git.suggestSmartCommit": false,
+    "launch": {
+        "configurations": [
+        ]
+    },
+
+    "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "javascriptreact"
+    },
+
+"emmet.triggerExpansionOnTab": true,
+"emmet.showAbbreviationSuggestions": true,
+
+"emmet.showExpandedAbbreviation": "always",
+
+"emmet.syntaxProfiles": {
+  "javascript": "jsx",
+  "typescript": "jsx"
+},
+
+"security.workspace.trust.untrustedFiles": "open",
+"emmet.preferences": {
+
+    },
+    "workbench.settings.applyToAllProfiles": [
+        
+    ],
+    "settingsSync.ignoredExtensions": [
+        
+    ]
+}

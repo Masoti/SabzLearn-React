@@ -1,11 +1,9 @@
 import React from 'react'
 import './Product.css'
 
-export default function Product({title, image, price}) {
-
-    // console.log(props)
-
-    // let {title, image, price} = props
+export default function Product({title, image = '11.png', price}) {
+    
+    // props.image = '11.png' // Wrong
 
     return (
         <div>
@@ -22,3 +20,7 @@ export default function Product({title, image, price}) {
         </div>
     )
 }
+
+// Product.defaultProps = {
+//     image: '11.png'
+// }

@@ -1,0 +1,112 @@
+.cd-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s 0s, visibility 0s 0.3s;
+    z-index: 100;
+}
+
+.cd-popup.is-visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s 0s, visibility 0s 0s;
+}
+
+.cd-popup-container {
+    position: relative;
+    width: 90%;
+    max-width: 400px;
+    margin: 20em auto;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 20px 15px;
+    transform: scale(0.9);
+    opacity: 0;
+    transition: transform 0.3s 0.3s, opacity 0.3s 0.3s;
+}
+
+.is-visible .cd-popup-container {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.cd-popup-container p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 2em;
+}
+
+.cd-popup-container p span {
+    font-size: 2rem;
+    margin-left: 0.5em;
+}
+
+.cd-popup-container .cd-buttons {
+    display: flex;
+    justify-content: space-around;
+    padding: 0;
+    list-style: none; 
+    margin-top: 20px;
+    margin-bottom: 0px;
+}
+
+.cd-popup-container .cd-buttons li {
+    flex: 1;
+    margin: 0 ;
+}
+
+.cd-popup-container .cd-buttons a {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 0px;
+    text-decoration: none;
+    font-weight: bold;
+    color: #fff;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.cd-popup-container .cd-buttons li:first-child a {
+    background-color: #ff5c5c;
+}
+
+.cd-popup-container .cd-buttons li:first-child a:hover {
+    background-color: #ff3333;
+}
+
+.cd-popup-container .cd-buttons li:last-child a {
+    background-color: #a4a4a4;
+}
+
+.cd-popup-container .cd-buttons li:last-child a:hover {
+    background-color: #888;
+}
+
+.cd-popup-close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    line-height: 28px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.cd-popup-close:hover {
+    background-color: #000;
+}
+
+
+

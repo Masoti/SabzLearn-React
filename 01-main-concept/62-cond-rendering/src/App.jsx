@@ -1,35 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { Component } from 'react'
 
-function App() {
-  const [count, setCount] = useState(0)
+export class App extends Component {
+
+  constructor (props) {
+      super(props)
+      
+      this.state = {
+        age: 19
+      }
+    }
+
+  render() {
+
+    // if (this.state.age > 18) {
+    //   return (
+    //     <div>
+    //       شما با موفقیت وارد وبسایت شدید
+    //     </div>
+    //   )
+    // } else {
+    //   return (
+    //       <div>
+    //         شما مجاز به ورود به وبسایت نیستید
+    //       </div>
+    //   )
+    // }
+
+
+    
+  // let errorMessage = null
+
+  // if (this.state.age < 18 ) {
+  //   errorMessage = <h1>شما مجاز به ورود به وبسایت نیستید</h1>
+  // } else {
+  //   errorMessage = <h1>شما با موفقیت وارد وبسایت شدید</h1>
+  // }
+
+  // return (
+  //   <div>
+  //     {errorMessage}
+  //   </div>
+  // )
+
+
+  // return (
+  //   <div>
+  //     {this.state.age < 18 && (
+  //       <h1>شما مجاز به ورود به وبسایت نیستید</h1>
+  //     )}
+  //   </div>
+  // )
+
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      شما مجاز به ورود به سایت {this.state.age > 18 ? 'می باشید' : 'نمی باشید' }
+    </div>
   )
+  }
 }
 
 export default App

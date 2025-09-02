@@ -1,13 +1,15 @@
-import React from "react";
-import Temp from './components/Temp/Temp';
+import React, { Component } from "react";
+import Temp from './components/Temp';
 
-class App extends React.Component {
+class App extends Component {
 
   render() {
-    <div>
-      <Temp/>
-    </div>
+    return (
+      <div>
+        <Temp />
+      </div>
+    );
   }
 }
 
-export default App
+export default App;

@@ -2,20 +2,53 @@ import React, { Component } from 'react'
 import './Counter.css'
 
 export default class Counter extends Component {
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      counter: 0
+    }
+
+    this.addToCounter = this.addToCounter.bind(this)
+    this.minusFromCounter = this.minusFromCounter.bind(this)
+  }
+
+  addToCounter() {
+    this.setState(prevState => {
+      return {counter: prevState.counter +1}
+    })
+    // console.log('Add');
+  }
+  // addToCounter = () => {
+  //   this.setState({
+  //     counter: this.state.counter + 1
+  //   })
+  // }
+
+  minusFromCounter() {
+    this.setState(prevState => {
+      return {counter: prevState.counter -1}
+    })
+    // console.log('Minus');
+  }
+  // minusFromCounter = () => {
+  //   this.setState({
+  //     counter: this.state.counter - 1
+  //   })
+  // }
+
   render() {
     return (
-      <div>
-        <section id='main'>
-            <div className='container'>
-                <h2 id="title">Counter</h2>
-                <h3 id="counter">0</h3>
-                <div className="btn-container">
-                    <button id='add' onClick='add()'>Add Count</button>
-                    <button id='lower' onClick='lower()'>Lower Count</button>
-                </div>
-            </div>
-        </section>
-      </div>
+      <section id='main'>
+          <div className='container'>
+              <h2 id="title">Counter</h2>
+              <h3 id="counter">{this.state.counter}</h3>
+              <div className="btn-container">
+                  <button id='lower' onClick={this.minusFromCounter}>Lower Count</button>
+                  <button id='add' onClick={this.addToCounter}>Add Count</button>
+              </div>
+          </div>
+      </section>
     )
   }
 }

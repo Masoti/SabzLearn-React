@@ -71,9 +71,10 @@
 // const totalSalary = staff.reduce((total, persons) => total + persons.salary, 0);
 // console.log('totalSalary :', totalSalary);
 
-const votes = ['pvh', 'ashi', 'pvh', 'pvh', 'old', 'pvh', 'old', 'khorma', 'khorma', 'old'];
-const votesCount = votes.reduce((name, vote_count) => {
-    name[vote_count] = (name[vote_count] || 0) + 1;
-    return name;
-}, {});
-console.log('votesCount :', votesCount);
+// const votes = ['pvh', 'ashi', 'pvh', 'pvh', 'old', 'pvh', 'old', 'khorma', 'khorma', 'old','fifi'];
+// const votesCount = votes.reduce((kandid, vote_count) => {
+//     kandid[vote_count] = (kandid[vote_count] || 0) + 1;
+//     // console.log(kandid)
+//     return kandid;
+// }, {});
+// console.log('votesCount :', votesCount);

@@ -3,7 +3,6 @@ import "./Form.css";
 
 export default class Form extends React.Component {
 
-
     constructor() {
         super()
 
@@ -11,9 +10,7 @@ export default class Form extends React.Component {
             firstNameData: '',
             lastNameData: '',
             emailData: '',
-
             submitted: false,
-
             allValid: false
         }
 
@@ -94,7 +91,6 @@ export default class Form extends React.Component {
                     />
                     {/* Uncomment the next line to show the error message */}
                     {this.state.submitted && this.state.lastNameData.length === 0 && (
-
                         <span id="last-name-error">Please enter a last name</span>
                     )}
                     <input

@@ -8,11 +8,11 @@ export default class Ticket extends React.Component {
 
         this.state = {
             countriesData: {
-                Iran: ["Tabriz", "Tehran", "Shiraz", "Esfahan", "Mashhad"],
+                Iran: ["Gilan", "Tehran", "Orumiah", "Yazd", "Shiraz"],
                 Turkey: ["Istanbul", "Ezmir", "Ankara", "Antaliya"],
                 US: ["Los Angles", "San Diego", "Chicago"],
             },
-            mainCountryCities: [],
+            defaultCities: [],
             firstNameData: '',
             lastNameData: '',
             emailData: '',
@@ -20,7 +20,15 @@ export default class Ticket extends React.Component {
             booked: false,
             allValid: false
         }
+
+        this.bookHandler = this.bookHandler.bind(this)
+        this.firstNameValidation = this.firstNameValidation.bind(this)
+        this.lastNameValidation = this.lastNameValidation.bind(this)
+        this.emailValidation = this.emailValidation.bind(this)
+        this.phoneValidation = this.phoneValidation.bind(this)
+        this.countryValidation = this.countryValidation.bind(this)
     }
+    
 
     firstNameValidation(event) {
         this.setState({
@@ -46,11 +54,52 @@ export default class Ticket extends React.Component {
         })
     }
 
+    countryValidation (event) {
+        let defaultCountry = event.target.value
+
+        if (defaultCountry === -1) {
+            this.setState({
+                defaultCities: []
+            })
+        } else {
+            let defaultCities = this.state.countriesData[defaultCountry]
+
+            this.setState({
+                defaultCities: defaultCities
+            })
+        }
+    }
+
+    bookHandler(event) {
+        event.preventDefault()
+
+        this.setState({
+            booked: true
+        })
+
+        if (this.state.firstNameData.length !== 0 && this.state.lastNameData.length !== 0 && this.state.emailData.length !== 0 && this.state.phoneData.length !== 0 && this.state.defaultCities.length !== -1) {
+            this.setState({
+                allValid: true
+            })
+
+            setTimeout(() => {
+                this.setState({
+                    allValid: false
+                })
+            }, 3000);
+        }
+
+        console.log(event);
+    }
+
 
     render() {
         return (
             <>
-                <div className="container">
+                <form className="container" onSubmit={this.bookHandler} autoComplete="off">
+                    {this.state.booked && this.state.allValid && (
+                        <div className="success-message">Success! Yore Ticket booked</div>
+                    )}
                     <div className="col-md-6 box">
                         <input 
                             className="fnameInput"
@@ -97,23 +146,33 @@ export default class Ticket extends React.Component {
                         )}
                     </div>
                     <div className="col-md-6 box">
-                        <select className="countrySelect">
+                        <select className="countrySelect" onChange={this.countryValidation}>
                             <option value="-1">Please Select ...</option>
                             <option className="option" value="Iran">Iran</option>
                             <option className="option" value="Turkey">Turkey</option>
                             <option className="option" value="US">United State</option>
                         </select>
+                        {this.state.booked && this.state.defaultCountry === -1 && (
+                            <span id="country-select-error">Please select your country</span>
+                        )}
                     </div>
                     <div className="col-md-6 box">
                         <select className="citySelect">
+                            {this.state.defaultCities.length ? this.state.defaultCities.map(city => (
+                                <option value={city} key={city}>{city}</option>
+                            )) : (
                                 <option value="-1">Please Select City</option>
+                            )}
                         </select>
                     </div>
                     <div className="col-md-12 box">
-                        <button className="btn">Book a ticket</button>
+                        <button className="btn" type="submit">
+                            Book a ticket
+                        </button>
                     </div>
-                </div>
+                </form>
             </>
         )
     }
 }
+console.log(this.state.countriesData)

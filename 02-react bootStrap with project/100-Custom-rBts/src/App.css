@@ -1,7 +1,7 @@
 .left-btns {
-    justify-content: flex-start;
+  justify-content: flex-start;
 }
 
 .rtl-text {
-    direction: rtl;
+  direction: rtl;
 }
